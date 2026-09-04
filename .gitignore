@@ -1,0 +1,6 @@
+Obsidian_Brain/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+chroma_db/

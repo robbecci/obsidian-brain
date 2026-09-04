@@ -1,3 +1,10 @@
 python-frontmatter==1.1.0
 PyYAML==6.0.2
 pytest==8.3.4
+sentence-transformers>=3.3.1
+chromadb>=0.5.23
+
+# Verranno aggiunte nei prossimi step:
+# anthropic         # step 5 - LLM
+# fastapi            # step 6 - API layer
+# uvicorn             # step 6 - server ASGI

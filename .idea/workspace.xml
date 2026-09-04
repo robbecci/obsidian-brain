@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32156b05-265a-4105-a8c6-cb0566676598" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/obsidian_brain/chunker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_chunker.py" afterDir="false" />
-    </list>
+    <list default="true" id="32156b05-265a-4105-a8c6-cb0566676598" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
