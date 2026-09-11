@@ -29,7 +29,13 @@ class VectorStore:
         self.persist_dir = Path(persist_dir)
         self.embedder = embedder or Embedder()
         self._client = chromadb.PersistentClient(path=str(self.persist_dir))
-        self._collection = self._client.get_or_create_collection(name=collection_name)
+        # Distanza coseno invece del default L2: va sempre da 0 (identico) a
+        # 2 (opposto), indipendentemente dalla scala degli embedding. Questo
+        # rende possibile fissare una soglia di rilevanza sensata allo step 4.
+        self._collection = self._client.get_or_create_collection(
+            name=collection_name,
+            metadata={"hnsw:space": "cosine"},
+        )
 
     def add_chunks(self, chunks: list[Chunk]) -> None:
         """Calcola gli embedding per una lista di Chunk e li salva (o

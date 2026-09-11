@@ -1,6 +1,6 @@
-Obsidian_Brain/
 .venv/
 __pycache__/
 .pytest_cache/
 *.pyc
-chroma_db/
+chroma_db*/
+.idea/workspace.xml
