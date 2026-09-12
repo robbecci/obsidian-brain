@@ -4,8 +4,6 @@ pytest==8.3.4
 sentence-transformers>=3.3.1
 chromadb>=0.5.23
 ollama
+fastapi
+uvicorn
 
-# Verranno aggiunte nei prossimi step:
-# anthropic         # step 5 - LLM
-# fastapi            # step 6 - API layer
-# uvicorn             # step 6 - server ASGI
