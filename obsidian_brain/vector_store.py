@@ -32,9 +32,12 @@ class VectorStore:
         # Distanza coseno invece del default L2: va sempre da 0 (identico) a
         # 2 (opposto), indipendentemente dalla scala degli embedding. Questo
         # rende possibile fissare una soglia di rilevanza sensata allo step 4.
+        # Salvata come attributo perché serve anche in reset() quando la
+        # collection viene ricreata da zero.
+        self._collection_metadata = {"hnsw:space": "cosine"}
         self._collection = self._client.get_or_create_collection(
             name=collection_name,
-            metadata={"hnsw:space": "cosine"},
+            metadata=self._collection_metadata,
         )
 
     def add_chunks(self, chunks: list[Chunk]) -> None:
@@ -112,4 +115,10 @@ class VectorStore:
         """
         name = self._collection.name
         self._client.delete_collection(name)
-        self._collection = self._client.get_or_create_collection(name=name)
+        # Bug corretto: qui bisogna ripassare la metadata della metrica di
+        # distanza, altrimenti Chroma ricrea la collection col default L2
+        # invece di coseno, vanificando la soglia di rilevanza dello step 4.
+        self._collection = self._client.get_or_create_collection(
+            name=name,
+            metadata=self._collection_metadata,
+        )
