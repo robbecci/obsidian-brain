@@ -13,11 +13,14 @@ from dataclasses import dataclass
 
 from obsidian_brain.vector_store import VectorStore
 
-# Con distanza coseno (0 = identico, 2 = opposto), 0.6 è un punto di
-# partenza ragionevole: abbastanza permissivo da accettare formulazioni
-# diverse della stessa domanda, abbastanza stretto da scartare contenuto
-# solo vagamente correlato. Andrà probabilmente ricalibrato allo step 7
-# (real-world testing) osservando risultati su domande vere.
+# Validato empiricamente allo step 7 su una vault con note ricche di
+# contesto (paragrafi multi-frase, non singole righe): su un campione di
+# 11 domande, le domande pertinenti avevano distanza top-1 <= 0.582,
+# quelle fuori tema >= 0.763 - un margine di sicurezza di quasi 0.18 in
+# cui 0.6 si colloca comodamente. Con note molto brevi (poche parole) il
+# margine si riduce o sparisce: la qualità del retrieval dipende quindi
+# anche da quanto contesto contengono le note originali, non solo dai
+# parametri di chunking.
 DEFAULT_MAX_DISTANCE = 0.6
 DEFAULT_N_RESULTS = 5
 

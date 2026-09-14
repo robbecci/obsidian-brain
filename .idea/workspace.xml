@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32156b05-265a-4105-a8c6-cb0566676598" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/obsidian_brain/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obsidian_brain/inspect_index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obsidian_brain/retriever.py" beforeDir="false" afterPath="$PROJECT_DIR$/obsidian_brain/retriever.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
